@@ -19,13 +19,12 @@ class IOConfig:
 
 @dataclass
 class RangeConfig:
-    frame: int | None = None     # exact frame index (0-based)
-    start: int = 0               # base start when exporting video
-    length: int | None = None    # number of pairs to write (video mode)
+    frame: int | None = None
+    start: int = 0
+    end: int | None = None   # matches your --end flag
 
 @dataclass
 class DiffConfig:
-    mode: str = "color"          # "color" or "binary"
-    threshold: int = 0           # tolerance (0 = exact)
-    invert: bool = False         # only for binary
-    resize_b_to_a: bool = False  # resize B to match A
+    threshold: int = 0
+    invert: bool = False
+    resize_b_to_a: bool = False
